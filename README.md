@@ -23,7 +23,7 @@ If ytm-rs isn't running, or the remote control setting is off, a press shows the
 
 ## Requirements
 
-- [Stream Deck](https://www.elgato.com/stream-deck) app 7.1 or newer (macOS 12+ or Windows 10+). This is what the current Elgato SDK targets. The app runs the plugin; you don't install Node.js to use it.
+- [Stream Deck](https://www.elgato.com/stream-deck) app 7.1 or newer (macOS 12+ or Windows 10+). The app runs the plugin on the Node.js 20 it already includes. You don't install Node.js yourself.
 - ytm-rs with the remote-control patch (below), and the **Stream Deck** switch turned on in Settings, Connections.
 
 ## Install

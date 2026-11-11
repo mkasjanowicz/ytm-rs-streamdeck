@@ -1,4 +1,5 @@
 import type { KeyDownEvent, WillAppearEvent, WillDisappearEvent } from "@elgato/streamdeck";
+import WebSocket from "ws";
 
 /** `ws://127.0.0.1`, not `localhost` — localhost may be IPv6, and ytm-rs binds v4 only. */
 const URL = "ws://127.0.0.1:26540";
@@ -82,22 +83,22 @@ class Player {
 	private connect(): void {
 		const ws = new WebSocket(URL);
 		this.ws = ws;
-		ws.addEventListener("open", () => {
+		ws.on("open", () => {
 			this.alerted = false;
 			this.retryMs = 500;
 		});
-		ws.addEventListener("message", (ev) => {
-			if (typeof ev.data !== "string") return;
+		ws.on("message", (data) => {
+			const text = typeof data === "string" ? data : data.toString();
 			let state: State;
 			try {
-				state = JSON.parse(ev.data) as State;
+				state = JSON.parse(text) as State;
 			} catch {
 				return;
 			}
 			this.state = state;
 			for (const listener of this.listeners.values()) listener.state?.(state);
 		});
-		ws.addEventListener("close", () => {
+		ws.on("close", () => {
 			if (this.ws !== ws) return;
 			this.ws = undefined;
 			if (!this.alerted) {
@@ -106,7 +107,7 @@ class Player {
 			}
 			if (this.listeners.size > 0) this.schedule();
 		});
-		ws.addEventListener("error", () => ws.close());
+		ws.on("error", () => ws.close());
 	}
 
 	private schedule(): void {
