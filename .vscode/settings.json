@@ -1,0 +1,8 @@
+{
+	"json.schemas": [
+		{
+			"fileMatch": ["**/manifest.json"],
+			"url": "https://schemas.elgato.com/streamdeck/plugins/manifest.json"
+		}
+	]
+}

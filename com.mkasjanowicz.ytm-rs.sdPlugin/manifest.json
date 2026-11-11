@@ -1,0 +1,181 @@
+{
+	"Name": "ytm-rs Controller",
+	"Version": "0.1.0.0",
+	"Author": "mkasjanowicz",
+	"Actions": [
+		{
+			"Name": "Play / Pause",
+			"UUID": "com.mkasjanowicz.ytm-rs.play-pause",
+			"Icon": "imgs/actions/play-pause/icon",
+			"Tooltip": "Play or pause ytm-rs",
+			"Controllers": [
+				"Keypad"
+			],
+			"DisableAutomaticStates": true,
+			"States": [
+				{
+					"Image": "imgs/actions/play-pause/play",
+					"Name": "Paused"
+				},
+				{
+					"Image": "imgs/actions/play-pause/pause",
+					"Name": "Playing"
+				}
+			]
+		},
+		{
+			"Name": "Next",
+			"UUID": "com.mkasjanowicz.ytm-rs.next",
+			"Icon": "imgs/actions/next/icon",
+			"Tooltip": "Next song",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/next/key"
+				}
+			]
+		},
+		{
+			"Name": "Previous",
+			"UUID": "com.mkasjanowicz.ytm-rs.previous",
+			"Icon": "imgs/actions/previous/icon",
+			"Tooltip": "Previous song",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/previous/key"
+				}
+			]
+		},
+		{
+			"Name": "Volume Up",
+			"UUID": "com.mkasjanowicz.ytm-rs.volume-up",
+			"Icon": "imgs/actions/volume-up/icon",
+			"Tooltip": "Volume up",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/volume-up/key"
+				}
+			]
+		},
+		{
+			"Name": "Volume Down",
+			"UUID": "com.mkasjanowicz.ytm-rs.volume-down",
+			"Icon": "imgs/actions/volume-down/icon",
+			"Tooltip": "Volume down",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/volume-down/key"
+				}
+			]
+		},
+		{
+			"Name": "Like",
+			"UUID": "com.mkasjanowicz.ytm-rs.like",
+			"Icon": "imgs/actions/like/icon",
+			"Tooltip": "Like or unlike the song that's playing",
+			"Controllers": [
+				"Keypad"
+			],
+			"DisableAutomaticStates": true,
+			"States": [
+				{
+					"Image": "imgs/actions/like/off",
+					"Name": "Not liked"
+				},
+				{
+					"Image": "imgs/actions/like/on",
+					"Name": "Liked"
+				}
+			]
+		},
+		{
+			"Name": "Shuffle",
+			"UUID": "com.mkasjanowicz.ytm-rs.shuffle",
+			"Icon": "imgs/actions/shuffle/icon",
+			"Tooltip": "Shuffle the songs coming up",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/shuffle/key"
+				}
+			]
+		},
+		{
+			"Name": "Repeat",
+			"UUID": "com.mkasjanowicz.ytm-rs.repeat",
+			"Icon": "imgs/actions/repeat/icon",
+			"Tooltip": "Cycle repeat: off, all, one",
+			"Controllers": [
+				"Keypad"
+			],
+			"DisableAutomaticStates": true,
+			"States": [
+				{
+					"Image": "imgs/actions/repeat/off",
+					"Name": "Off"
+				},
+				{
+					"Image": "imgs/actions/repeat/all",
+					"Name": "All"
+				},
+				{
+					"Image": "imgs/actions/repeat/one",
+					"Name": "One"
+				}
+			]
+		},
+		{
+			"Name": "Now Playing",
+			"UUID": "com.mkasjanowicz.ytm-rs.now-playing",
+			"Icon": "imgs/actions/now-playing/icon",
+			"Tooltip": "Cover and title. Press to play or pause.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/now-playing/key",
+					"TitleAlignment": "bottom",
+					"FontSize": 10
+				}
+			]
+		}
+	],
+	"Category": "ytm-rs Controller",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Control ytm-rs playback from a Stream Deck. Not affiliated with YouTube or Google.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "com.mkasjanowicz.ytm-rs"
+}
